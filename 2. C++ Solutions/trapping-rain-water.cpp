@@ -1,6 +1,3 @@
-//* https://www.geeksforgeeks.org/trapping-rain-water/
-//* https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1
-
 //{ Driver Code Starts
 #include<bits/stdc++.h>
 

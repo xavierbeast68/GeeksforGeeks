@@ -1,6 +1,3 @@
-//* https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/
-//* https://practice.geeksforgeeks.org/problems/max-min/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
-
 //{ Driver Code Starts
 /* Driver program to test above function */
 
