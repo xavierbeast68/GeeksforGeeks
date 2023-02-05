@@ -1,3 +1,6 @@
+//* https://www.geeksforgeeks.org/a-product-array-puzzle/
+//* https://practice.geeksforgeeks.org/problems/product-array-puzzle4525/1
+
 //{ Driver Code Starts
 // Initial template for C++
 

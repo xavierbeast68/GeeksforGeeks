@@ -1,3 +1,5 @@
+//* https://www.geeksforgeeks.org/chocolate-distribution-problem/
+
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long

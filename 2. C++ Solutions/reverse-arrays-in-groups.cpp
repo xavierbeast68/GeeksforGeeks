@@ -1,3 +1,6 @@
+//* //* https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
+//* https://practice.geeksforgeeks.org/problems/reverse-array-in-groups0255/1
+
 //{ Driver Code Starts
 //Initial template for C++
 
