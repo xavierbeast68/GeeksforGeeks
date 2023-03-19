@@ -9,7 +9,6 @@
 */
 /**
  * xavierbeast68
- * URL : https://practice.geeksforgeeks.org/contest/acm-semicode-round-1/problems
  * AVOIDING COMPLEXITY, REDUCES BUGS.
  */
 
@@ -146,26 +145,39 @@ ll getRandomNumber(ll l, ll r)                      {return uniform_int_distribu
 
 class Solution{
 public:
-    int minSum(int n){
-        if(n == 1){
-            return 5;
+    long long count = 0;
+    string cmp = "101";
+    void dfs(string s, string temp, int k, int ind, int len){
+        if(k == 0){
+            if(temp.compare(cmp) == 0){
+                count++;
+            }
+            return;
+        }
+        if(ind == len){
+            return;
         }
 
-        int odd = 5;
-        int even = 4;
-
-        if(n%2 == 0){
-            int times = n/2;
-            int number = odd*even;
-            return binpow(number, times);
+        dfs(s, temp+s[ind], k-1, ind+1, len);
+        dfs(s, temp, k, ind+1, len);
+    }
+    int doSomething(long long n){
+        if(n < 5){
+            return 0;
         }
-        else{
-            int times = n/2;
-            int number1 = binpow(odd, times+1);
-            int number2 = binpow(even, times);
-
-            return mod_mul(number1, number2);
+        string binary= "";
+        long long temp = n;
+        while (n > 0) {
+            int d = n % 2;
+            binary += (d+'0');
+            n = n / 2;
         }
+        n = temp;
+        
+        int len = binary.length();
+        dfs(binary, "", 3, 0, len);
+        
+        return count;
     }
 };
 
@@ -174,7 +186,7 @@ void solve()
     /*--Let's Code--*/
     read(n);
     Solution obj;
-    int ans = obj.minSum(n);
+    int ans = obj.doSomething(n);
     println(ans);
 }
 
@@ -188,7 +200,7 @@ signed main()
 
     /*testcases=1: default value for single test case*/
     int testcases = 1;
-    cin >> testcases;
+    // cin >> testcases;
     while (testcases--)
     {
         solve();

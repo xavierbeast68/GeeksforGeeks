@@ -146,26 +146,20 @@ ll getRandomNumber(ll l, ll r)                      {return uniform_int_distribu
 
 class Solution{
 public:
-    int minSum(int n){
-        if(n == 1){
-            return 5;
+    int ans = INT_MIN;
+    void dfs(vector<int>& arr, int sum, int n, int ind, int sign){
+        if(n == ind){
+            ans = max(ans, sum);
+            return;
         }
 
-        int odd = 5;
-        int even = 4;
+        dfs(arr, sum+(sign*arr[ind]), n, ind+1, sign*(-1));
 
-        if(n%2 == 0){
-            int times = n/2;
-            int number = odd*even;
-            return binpow(number, times);
-        }
-        else{
-            int times = n/2;
-            int number1 = binpow(odd, times+1);
-            int number2 = binpow(even, times);
-
-            return mod_mul(number1, number2);
-        }
+        dfs(arr, sum, n, ind+1, sign);
+    }
+    int minSum(int n, vi arr){
+        dfs(arr, 0, n, 0, 1);
+        return ans;
     }
 };
 
@@ -173,8 +167,12 @@ void solve()
 {
     /*--Let's Code--*/
     read(n);
+    vi arr = readvector(n);
+    if(n==1){
+        println(arr[0]);
+    }
     Solution obj;
-    int ans = obj.minSum(n);
+    int ans = obj.minSum(n, arr);
     println(ans);
 }
 
